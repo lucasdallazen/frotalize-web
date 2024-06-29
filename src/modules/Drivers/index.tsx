@@ -1,22 +1,40 @@
 // src/modules/Drivers.tsx
 
-import { Card, Table } from "antd";
+import FrotalizeTable from "../../components/FrotalizeTable";
 
 export default function Drivers() {
-  const dataSource = [
+
+  const driversData = [
     {
       key: '1',
-      name: 'Mike',
-      age: 32,
-      address: '10 Downing Street',
+      name: 'Alice Smith',
+      age: 28,
+      address: '123 Main St, Cityville',
+      license: 'A123-4567-8901',
     },
     {
       key: '2',
-      name: 'John',
-      age: 42,
-      address: '10 Downing Street',
+      name: 'Bob Johnson',
+      age: 35,
+      address: '456 Oak Ave, Townsville',
+      license: 'B987-6543-2109',
+    },
+    {
+      key: '3',
+      name: 'Charlie Brown',
+      age: 30,
+      address: '789 Elm Blvd, Villagetown',
+      license: 'C567-8901-2345',
+    },
+    {
+      key: '4',
+      name: 'Diana Davis',
+      age: 25,
+      address: '321 Cedar Rd, Hamlet',
+      license: 'D543-2109-8765',
     },
   ];
+
 
   const columns = [
     {
@@ -34,15 +52,16 @@ export default function Drivers() {
       dataIndex: 'address',
       key: 'address',
     },
+    {
+      title: 'License Number',
+      dataIndex: 'license',
+      key: 'license',
+    },
   ];
-
   return (
     <div>
-      <Card>
-        <Table
-          
-          showHeader dataSource={dataSource} columns={columns} />
-      </Card>
+
+      <FrotalizeTable tableTitle="Motoristas" columns={columns} dataSource={driversData} />
     </div>
   );
 }
